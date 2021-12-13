@@ -17,11 +17,10 @@ export default {
   },
   methods: {
     addTodo() {
-      // console.log(this.newTodoItem);
       var value = this.newTodoItem.trim();
-      //if(this.newTodoItem !== "") {
       if(value !== "") {
-        localStorage.setItem(value, value);
+        //localStorage.setItem(value, value);
+        this.$emit('addTodo', value);
         this.clearInput();
       }
     },
